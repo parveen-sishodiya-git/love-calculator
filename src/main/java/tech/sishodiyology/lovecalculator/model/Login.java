@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import tech.sishodiyology.lovecalculator.validator.annotation.username.Username;
+
 @Entity
 @Table(name = "login")
 public class Login {
@@ -17,7 +19,7 @@ public class Login {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Size(min = 5,max = 12,message = "*Invalid username")
+	@Username(message = "Username Invalid | User Typed")
 	private String username = "username";
 	
 	
